@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>DiatomOoze</title>
+	  <meta charset="utf-8">
+	  <%= stylesheet_link_tag    "application", :media => "all" %>
+	  <%= javascript_include_tag "application" %>
+
+	  <%= csrf_meta_tags %>
+</head>
+<body>
+<div id="myCarousel" class="carousel slide">
+  <div class="carousel-inner">
+    <div class="item active">
+      <%= image_tag "slide-01.jpg" %>
+      <div class="container">
+        <div class="carousel-caption">
+          <h1>产品介绍</h1>
+          <p class="lead">功能性室内装饰壁材，不添加无机凝胶物（白水泥、石膏、白石灰、腻子粉）物质的纯天然材质，配制的干粉状内墙装饰涂覆材料,具有净化空气、调节湿度、释放负氧离子、防火阻燃、墙面自洁、杀菌除臭等功能。硅藻泥的吸附性极强.</p>
+          <a class="btn btn-large btn-primary" href="#">产品展示</a>
+        </div>
+      </div>
+    </div>
+    <div class="item">
+      <%= image_tag "slide-02.jpg"%>
+      <div class="container">
+        <div class="carousel-caption">
+          <h1>新闻动态</h1>
+          <p class="lead">康邦硅藻泥深圳第二店将于下周三落子南山博耐家居广场。据了解，为庆祝公司成立10周年，深圳市康邦环保公司特借南山博耐旗舰店开业，感谢广大用户多年来对康邦硅藻泥的支持与厚爱.</p>
+          <a class="btn btn-large btn-primary" href="#">最新动态</a>
+        </div>
+      </div>
+    </div>
+    <div class="item">
+      <%= image_tag "slide-03.jpg"%>
+      <div class="container">
+        <div class="carousel-caption">
+          <h1>加入我们</h1>
+          <p class="lead">建材行业追求健康、环保的时代背景，为硅藻泥的发展提供了难得的历史机遇，使我们有机会担当起硅藻泥行业先行者的角色。对此，我们倍感荣幸，并为之不懈努力！春之元硅藻泥对所有加盟者的每一分钱都视为己出，尽最大努力保证所有加盟商的投资回报.</p>
+          <a class="btn btn-large btn-primary" href="#">现在加盟</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <a class="left carousel-control" href="#myCarousel" data-slide="prev">&lsaquo;</a>
+  <a class="right carousel-control" href="#myCarousel" data-slide="next">&rsaquo;</a>
+</div><!-- /.carousel -->
+	<div class="navbar-wrapper">
+      <!-- Wrap the .navbar in .container to center it within the absolutely positioned parent. -->
+      <div class="container">
+
+        <div class="navbar navbar-inverse">
+          <div class="navbar-inner">
+            <!-- Responsive Navbar Part 1: Button for triggering responsive navbar (not covered in tutorial). Include responsive CSS to utilize. -->
+            <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="brand" href="#">自然宜家</a>
+            <!-- Responsive Navbar Part 2: Place all navbar contents you want collapsed withing .navbar-collapse.collapse. -->
+            <div class="nav-collapse collapse">
+              <ul class="nav">
+                <li class="active"><a href="#">首页</a></li>
+                <li class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown">产品展示 <b class="caret"></b></a>
+                  <ul class="dropdown-menu">
+                    <li><a href="#">液态硅藻泥</a></li>
+                    <li><a href="#">干粉硅藻泥</a></li>
+                  </ul>
+                </li>
+                <li><a href="#about">新闻动态</a></li>
+                <li><a href="#about">硅藻泥加盟</a></li>
+                <li><a href="#contact">联系我们</a></li>
+                <!-- Read about Bootstrap dropdowns at http://twbs.github.com/bootstrap/javascript.html#dropdowns -->
+                
+              </ul>
+            </div><!--/.nav-collapse -->
+          </div><!-- /.navbar-inner -->
+        </div><!-- /.navbar -->
+      </div> <!-- /.container -->
+    </div><!-- /.navbar-wrapper -->
+    <div class="container">
+      <%= yield %>
+    </div>
+  <!-- page-content-wrapper -->
+
+</div>
+    <div class="push"><!--//--></div>
+</div> 
+ <footer class="footer">
+    <div class="container">
+        <div class="row">
+            <div class="span12">
+                <a href="https://gathercontent.com/">
+                  <h2>自然宜家</h2>
+                </a>
+                <p>Our mission is to bring content harmony to everyone.</p>
+            </div>
+        </div>
+        <div class="row links-horizontal">
+            <div class="span12">
+                <ul>
+                    <li>合作伙伴</li>
+                    <li><a href="https://gathercontent.com/">Home</a></li>
+                    <li><a href="https://gathercontent.com/features">Features</a></li>
+                    <li><a href="https://gathercontent.com/how-it-works">How It Works</a></li>
+                    <li><a href="https://gathercontent.com/pricing">Pricing</a></li>
+                    <li><a href="http://gathercontent.helpjuice.com/">Help &amp; Support</a></li>
+                    <li><a href="http://gathercontent.helpjuice.com/questions/26611-How-do-I-use-the-API" target="_blank">API</a></li>
+                    <li><a href="http://getsatisfaction.com/gathercontent" target="_blank">Community &amp; Feedback</a></li>
+                </ul>
+            </div>
+
+            <div class="span12">
+                <ul>
+                    <li>友情链接</li>
+                    <li><a href="https://gathercontent.com/about">About Us</a></li>
+                    <li><a href="mailto:support@gathercontent.com">Contact Us</a></li>
+                    <li><a href="http://blog.gathercontent.com">Blog</a></li>
+                    <li><a href="http://www.trello.com/board/product-roadmap/4fdb32ea92d2163a183b89c6" target="_blank">Product Roadmap</a></li>
+                </ul>
+            </div>
+
+        </div>
+
+        <p>Copyright GatherContent Ltd. All rights reserved. Proudly made in Scotland. Thank you to <a href="http://www.bloomagency.co.uk">Bloom Agency</a> for allowing us to use a photo of their amazing workspace.</p>
+
+    </div>
+</footer>
+</body>
+</html>
