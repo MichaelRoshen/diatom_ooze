@@ -1,20 +1,7 @@
 DiatomOoze::Application.routes.draw do
-  resources :enlists
 
+  resources :games, :enlists, :sites, :users, :teams
 
-  resources :games
-
-
-  resources :sites
-
-
-  resources :users
-
-
-  resources :teams
-
-
-  get "home/index"
   root :to => 'home#index'
 
   # The priority is based upon order of creation:
