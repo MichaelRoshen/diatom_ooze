@@ -1,0 +1,25 @@
+<h1>Listing enlists</h1>
+
+<table>
+  <tr>
+    <th>Game</th>
+    <th>User</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @enlists.each do |enlist| %>
+  <tr>
+    <td><%= enlist.game_id %></td>
+    <td><%= enlist.user_id %></td>
+    <td><%= link_to 'Show', enlist %></td>
+    <td><%= link_to 'Edit', edit_enlist_path(enlist) %></td>
+    <td><%= link_to 'Destroy', enlist, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Enlist', new_enlist_path %>

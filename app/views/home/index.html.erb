@@ -1,8 +1,9 @@
  <div class="row get-started-now">
     <div class="span12 white-panel button-text-panel">
         <div class="white-panel-content">
-            <h2>30-day free trial. No credit card required.</h2>
-            <a href="signup" class="btn btn-large btn-warning">联系我们</a>
+            <h2>最新活动，10月23日 12－14点，回龙观中学室内</h2>
+            <a href="signup" class="btn btn-large btn-warning">立即报名</a>
+            <a href="signup" class="btn btn-large btn-warning">查看详情</a>
         </div>
     </div>
 </div>
@@ -10,28 +11,24 @@
 <div class="row">
   <div class="span12 white-panel no-padding">
     <ul class="nav nav-tabs">
-        <li><a href="#home" data-toggle="tab" class="gc-icon agency-icon"><i class="icon-fire"></i>公司简介</a></li>
-        <li><a href="#profile" data-toggle="tab" class="gc-icon enterprise-icon"><i class="icon-user"></i>全体员工</a></li>
-        <li><a href="#messages" data-toggle="tab" class="gc-icon higher-ed-icon"><i class="icon-home"></i>生产基地</a></li>
-        <li><a href="#settings" data-toggle="tab" class="gc-icon gov-icon"><i class="icon-plus"></i>加盟代理</a></li>
+        <li><a href="#home" data-toggle="tab" class="gc-icon agency-icon"><i class="icon-fire"></i>天胡简介</a></li>
+        <li><a href="#profile" data-toggle="tab" class="gc-icon enterprise-icon"><i class="icon-user"></i>球员介绍</a></li>
+        <li><a href="#messages" data-toggle="tab" class="gc-icon higher-ed-icon"><i class="icon-home"></i>出勤查询</a></li>
+        <li><a href="#settings" data-toggle="tab" class="gc-icon gov-icon"><i class="icon-plus"></i>加入我们</a></li>
     </ul> <!-- End tabs -->
 
     <div class="tab-content">
         <div class="tab-pane active" id="home">
             <div class="span5">
-                <h2>Get the content you need from your clients. Organised and on time.</h2>
+                <h2><%= @team.try(:name) %></h2>
 
                 <ul class="green-checks">
-                    <li>Collaborate with your team and clients</li>
-                    <li>Keep content structured, in a centralised place</li>
-                    <li>Track changes, and see who has done what</li>
-                    <li>Export content directly into your CMS</li>
-                    <li>Save huge amounts of time and money</li>
+                    <%= @team.try(:note) %>
                 </ul>
 
-                <a href="signup" class="btn btn-warning btn-large">Get Started Now</a>
+                <a href="signup" class="btn btn-warning btn-large">加入我们</a>
 
-                <p class="small-text">30 day free trial, no credit card required.</p>
+                <p class="small-text">联系电话：xxxxxxxxxxx </p>
             </div>
             <div class="span5  pull-right">
                 <img src="https://gathercontent.com/assets/img/homepage/bloom.jpg" class="img-tilt" />

@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Game:</b>
+  <%= @enlist.game_id %>
+</p>
+
+<p>
+  <b>User:</b>
+  <%= @enlist.user_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_enlist_path(@enlist) %> |
+<%= link_to 'Back', enlists_path %>
