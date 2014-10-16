@@ -7,6 +7,7 @@ class CreateUsers < ActiveRecord::Migration
       t.integer :attend_count
       t.boolean :vip
       t.text :note
+      t.string :password
 
       t.timestamps
     end

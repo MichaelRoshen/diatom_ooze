@@ -1,6 +1,14 @@
 DiatomOoze::Application.routes.draw do
 
+  resources :users do
+    collection do 
+      post "login"
+    end
+  end
+
   resources :games, :enlists, :sites, :users, :teams
+
+  match "home/login" => "home#login"
 
   root :to => 'home#index'
 

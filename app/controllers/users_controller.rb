@@ -1,6 +1,20 @@
 class UsersController < ApplicationController
   # GET /users
   # GET /users.json
+
+  def login
+    uname=params[:user][:name]
+    upass=params[:user][:pass]
+    user = User.find_by_name_and_password(uname,upass)
+    session[:user_id] = nil
+    if user
+      session[:user_id] = user.id
+      redirect_to "/" , :notice => "login successfully!"
+    else
+      redirect_to "/home/login" , :notice => "failed!"
+    end
+  end
+
   def index
     @users = User.all
 
