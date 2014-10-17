@@ -11,13 +11,50 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130914083456) do
+ActiveRecord::Schema.define(:version => 20141016091607) do
 
-  create_table "products", :force => true do |t|
-    t.string   "name"
-    t.float    "price"
+  create_table "enlists", :force => true do |t|
+    t.integer  "game_id"
+    t.integer  "user_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+  end
+
+  create_table "games", :force => true do |t|
+    t.integer  "site_id"
+    t.date     "start_time"
+    t.date     "end_time"
+    t.string   "status"
+    t.integer  "attend_count"
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
+  end
+
+  create_table "sites", :force => true do |t|
+    t.string   "address"
+    t.float    "price"
+    t.text     "note"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "teams", :force => true do |t|
+    t.string   "name"
+    t.text     "note"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "users", :force => true do |t|
+    t.string   "name"
+    t.float    "balance"
+    t.integer  "team_id"
+    t.integer  "attend_count"
+    t.boolean  "vip"
+    t.text     "note"
+    t.string   "password"
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
   end
 
 end
