@@ -58,9 +58,9 @@
             <div class="nav-collapse collapse">
               <ul class="nav">
                 <li class="active"><a href="/">首页</a></li>
-                <li><a href="#about">比赛报名</a></li>
-                <li><a href="#about">余额查询</a></li>
-                <% if current_user %>
+                <li><a href="/enlists/week_enlist?game_id=<%= @game.try(:id) %>">比赛报名</a></li>
+                <li><a href="/enlists/week_enlist?game_id=<%= @game.try(:id) %>">余额查询</a></li>
+                <% if current_user.present? %>
                   <li><a href="#"><%= current_user.try(:name) %>已登录</a><li>
                 <% else %>
                   <li><a href="/home/login">登录</a></li>

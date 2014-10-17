@@ -1,9 +1,9 @@
  <div class="row get-started-now">
     <div class="span12 white-panel button-text-panel">
         <div class="white-panel-content">
-            <h2>最新活动，10月23日 12－14点，回龙观中学室内</h2>
-            <a href="signup" class="btn btn-large btn-warning">立即报名</a>
-            <a href="signup" class="btn btn-large btn-warning">查看详情</a>
+            <h2>最新活动，<%= game_date(@game)%>，<%= @game.site.address %></h2>
+            <a href="/home/enroll?game_id=<%= @game.try(:id) %>" class="btn btn-large btn-warning">立即报名</a>
+            <a href="/enlists/week_enlist?game_id=<%= @game.try(:id) %>" class="btn btn-large btn-warning">查看详情</a>
         </div>
     </div>
 </div>
@@ -31,51 +31,34 @@
                 <p class="small-text">联系电话：xxxxxxxxxxx </p>
             </div>
             <div class="span5  pull-right">
-                <img src="https://gathercontent.com/assets/img/homepage/bloom.jpg" class="img-tilt" />
+                <%= image_tag "psb.jpg"%>
                 <p class="small-text pull-right">Bloom Agency, taming content chaos.</p>
             </div>
         </div>
 
         <div class="tab-pane" id="profile">
             <div class="span5">
-                <img src="https://gathercontent.com/assets/img/homepage/enterprise.jpg" class="img-tilt" />
-            </div>
-            <div class="span5 pull-right">
-                <h2>Gather content from your subject matter experts, easily.</h2>
-
                 <ul class="green-checks">
-                    <li>Collaborate and provide guidance</li>
-                    <li>Keep content structured, in a centralised place</li>
-                    <li>Track changes, and see who has done what</li>
-                    <li>Automatically send deadline reminders</li>
-                    <li>Save huge amounts of time and money</li>
+                    <br/>
+                    <h2>总人数：<%= User.all.size %></h2>
+                    <% User.all.each do |user|%>
+                        <li><h2><%= user.name %> | <%= user.balance %></h2></li>
+                    <% end %>
                 </ul>
-
-                <a href="signup" class="btn btn-warning btn-large">Get Started Now</a>
-
-                <p class="small-text">30 day free trial, no credit card required.</p>
             </div>
         </div>
 
         <div class="tab-pane" id="messages">
             <div class="span5">
-                <h2>Work with your colleagues to organise the content you need.</h2>
-
                 <ul class="green-checks">
-                    <li>Collaborate with your team and faculty</li>
-                    <li>Keep content structured, in a centralised place</li>
-                    <li>Track changes, and see who has done what</li>
-                    <li>Track progress and get approval</li>
-                    <li>Remove headaches and save time</li>
+                    <br/>
+                    <% @count = Game.all.size %>
+                    <h2>总场数：<%= @count %></h2>
+                       <li><h2>姓名 | 出场次数 | 出勤率 </h2></li>
+                    <% User.all.each do |user|%>
+                        <li><h2><%= user.name %> | <%= user.games.count %> | <%= number_to_percentage(user.games.count / @count * 100) %>  </h2></li>
+                    <% end %>
                 </ul>
-
-                <a href="signup" class="btn btn-warning btn-large">Get Started Now</a>
-
-                <p class="small-text">30 day free trial, no credit card required.</p>
-            </div>
-            <div class="span5  pull-right">
-                <img src="https://gathercontent.com/assets/img/homepage/higher-ed.jpg" class="img-tilt" />
-                <p class="small-text pull-right">University of Louisville.</p>
             </div>
         </div>
 

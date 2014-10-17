@@ -13,23 +13,19 @@
 
   <div class="field">
     <%= f.label :site_id %><br />
-    <%= f.number_field :site_id %>
+    <%= f.select :site_id, Site.all.collect{|s| [s.address, s.id]}%>
+  </div>
+  <div class="field">
+    <%= f.label :game_date %><br />
+    <%= date_select "game", "game_date", use_month_numbers: true, :start_year => 2014 %>
   </div>
   <div class="field">
     <%= f.label :start_time %><br />
-    <%= f.date_select :start_time %>
+    <%= collection_select(:game, :start_time, (1..24).to_a, :to_s, :to_s)%>
   </div>
   <div class="field">
     <%= f.label :end_time %><br />
-    <%= f.date_select :end_time %>
-  </div>
-  <div class="field">
-    <%= f.label :status %><br />
-    <%= f.text_field :status %>
-  </div>
-  <div class="field">
-    <%= f.label :attend_count %><br />
-    <%= f.number_field :attend_count %>
+    <%= collection_select(:game, :end_time, (1..24).to_a, :to_s, :to_s)%>
   </div>
   <div class="actions">
     <%= f.submit %>

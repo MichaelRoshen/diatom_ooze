@@ -6,9 +6,17 @@ DiatomOoze::Application.routes.draw do
     end
   end
 
-  resources :games, :enlists, :sites, :users, :teams
+  resources :enlists do
+    collection do
+      get "week_enlist"
+    end
+  end
+
+  resources :games, :sites, :users, :teams
 
   match "home/login" => "home#login"
+  match "home/enroll" => "users#enroll"
+  match "home/enroll_success" => "home#enroll_success"
 
   root :to => 'home#index'
 

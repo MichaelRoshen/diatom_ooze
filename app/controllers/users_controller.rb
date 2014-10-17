@@ -1,3 +1,4 @@
+#encoding: utf-8
 class UsersController < ApplicationController
   # GET /users
   # GET /users.json
@@ -17,11 +18,25 @@ class UsersController < ApplicationController
 
   def index
     @users = User.all
-
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @users }
     end
+  end
+
+  # 报名比赛
+  def enroll
+    @game = Game.all_games.last
+    if session[:user_id].nil?
+      redirect_to "/home/enroll_success" , :notice => "登录后报名！"
+    else
+      if Enlist.where({user_id: session[:user_id], game_id: params[:game_id]}).first.present?
+        redirect_to "/home/enroll_success", :notice => "已经报名了，再报扣钱啊！"
+      else
+        Enlist.create({user_id: session[:user_id], game_id: params[:game_id]})
+        redirect_to "/home/enroll_success", :notice => "报名成功！"
+        end  
+      end
   end
 
   # GET /users/1

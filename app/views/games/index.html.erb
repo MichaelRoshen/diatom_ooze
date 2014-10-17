@@ -3,6 +3,7 @@
 <table>
   <tr>
     <th>Site</th>
+    <th>Game date</th>
     <th>Start time</th>
     <th>End time</th>
     <th>Status</th>
@@ -15,6 +16,7 @@
 <% @games.each do |game| %>
   <tr>
     <td><%= game.site_id %></td>
+    <td><%= game.game_date %></td>
     <td><%= game.start_time %></td>
     <td><%= game.end_time %></td>
     <td><%= game.status %></td>

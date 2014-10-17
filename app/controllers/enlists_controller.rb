@@ -1,6 +1,11 @@
 class EnlistsController < ApplicationController
   # GET /enlists
   # GET /enlists.json
+  def week_enlist
+    @game = Game.find_by_id(params[:game_id])
+    @users = @game.users
+  end
+
   def index
     @enlists = Enlist.all
 
