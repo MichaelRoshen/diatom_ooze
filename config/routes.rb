@@ -1,5 +1,7 @@
 DiatomOoze::Application.routes.draw do
 
+  get "home/admin"
+
   resources :users do
     collection do 
       post "login"
@@ -14,7 +16,7 @@ DiatomOoze::Application.routes.draw do
 
   resources :games, :sites, :users, :teams
 
-  match "home/login" => "home#login"
+  get "home/login"
   match "home/enroll" => "users#enroll"
   match "home/enroll_success" => "home#enroll_success"
 

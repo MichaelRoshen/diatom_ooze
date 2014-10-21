@@ -1,13 +1,17 @@
-<h1>Listing users</h1>
-
+<%= render :partial => "layouts/admin_header" %>
+<div class="row">
+  <div class="span12 white-panel no-padding">
+    <div class="tab-pane" id="profile">
+      <div class="span5">
+          <ul class="green-checks">
+            <br/>
+            <h2>目录</h2>
 <table>
   <tr>
-    <th>Name</th>
-    <th>Balance</th>
-    <th>Team</th>
-    <th>Attend count</th>
+    <th>姓名</th>
+    <th>余额</th>
+    <th>球队</th>
     <th>Vip</th>
-    <th>Note</th>
     <th>Password</th>
     <th></th>
     <th></th>
@@ -19,17 +23,22 @@
     <td><%= user.name %></td>
     <td><%= user.balance %></td>
     <td><%= user.team_id %></td>
-    <td><%= user.attend_count %></td>
     <td><%= user.vip %></td>
-    <td><%= user.note %></td>
     <td><%= user.password %></td>
-    <td><%= link_to 'Show', user %></td>
-    <td><%= link_to 'Edit', edit_user_path(user) %></td>
-    <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <td><%= link_to '查看', user %></td>
+    <td><%= link_to '修改', edit_user_path(user) %></td>
+    <td><%= link_to '删除', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
   </tr>
 <% end %>
 </table>
 
 <br />
 
-<%= link_to 'New User', new_user_path %>
+<%= link_to '创建', new_user_path %>              
+          </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+

@@ -1,25 +1,38 @@
-<%= form_for(@team) do |f| %>
-  <% if @team.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@team.errors.count, "error") %> prohibited this team from being saved:</h2>
+<div class="row">
+  <div class="span12 white-panel no-padding">
+    <div class="tab-pane" id="profile">
+      <div class="span5">
+          <ul class="green-checks">
+            <br/>
+            <h2>目录</h2>
+              <%= form_for(@team) do |f| %>
+                <% if @team.errors.any? %>
+                  <div id="error_explanation">
+                    <h2><%= pluralize(@team.errors.count, "error") %> prohibited this team from being saved:</h2>
 
-      <ul>
-      <% @team.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
+                    <ul>
+                    <% @team.errors.full_messages.each do |msg| %>
+                      <li><%= msg %></li>
+                    <% end %>
+                    </ul>
+                  </div>
+                <% end %>
+
+                <div class="field">
+                  <%= f.label :name %><br />
+                  <%= f.text_field :name %>
+                </div>
+                <div class="field">
+                  <%= f.label :note %><br />
+                  <%= f.text_area :note %>
+                </div>
+                <div class="actions">
+                  <%= f.submit %>
+                </div>
+              <% end %>
+          </ul>
+      </div>
     </div>
-  <% end %>
+  </div>
+</div>
 
-  <div class="field">
-    <%= f.label :name %><br />
-    <%= f.text_field :name %>
-  </div>
-  <div class="field">
-    <%= f.label :note %><br />
-    <%= f.text_area :note %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-<% end %>
