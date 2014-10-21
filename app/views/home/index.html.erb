@@ -54,9 +54,9 @@
                     <br/>
                     <% @count = Game.all.size %>
                     <h2>总场数：<%= @count %></h2>
-                       <li><h2>姓名 | 出场次数 | 出勤率 </h2></li>
+                       <li><h2>姓名 | 出场次数 | 总场次 </h2></li>
                     <% User.all.each do |user|%>
-                        <li><h2><%= user.try(:name) %> | <%= user.try(:games).try(:count) %> | <%= number_to_percentage(user.try(:games).try(:count) / @count * 100) %>  </h2></li>
+                        <li><h2><%= user.try(:name) %> | <%= user.try(:games).try(:count) %> | <%= @count %>  </h2></li>
                     <% end %>
                 </ul>
             </div>
