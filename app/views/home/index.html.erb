@@ -1,9 +1,13 @@
  <div class="row get-started-now">
     <div class="span12 white-panel button-text-panel">
         <div class="white-panel-content">
+            <% if @game.present? %>
             <h2>最新活动，<%= game_date(@game)%>，<%= @game.try(:site).try(:address) %></h2>
             <a href="/home/enroll?game_id=<%= @game.try(:id) %>" class="btn btn-large btn-warning">立即报名</a>
             <a href="/enlists/week_enlist?game_id=<%= @game.try(:id) %>" class="btn btn-large btn-warning">查看详情</a>
+            <% else %>
+            <h2>本周还没有安排，请咨询管理员</2>
+            <% end %>
         </div>
     </div>
 </div>
