@@ -1,0 +1,7 @@
+DiatomOoze::Application.middleware.delete 'Rack::Runtime'
+DiatomOoze::Application.middleware.delete 'ActionDispatch::RequestId'
+DiatomOoze::Application.middleware.delete 'ActionDispatch::RemoteIp'
+DiatomOoze::Application.middleware.delete 'ActionDispatch::Callbacks'
+DiatomOoze::Application.middleware.delete 'ActionDispatch::Head'
+DiatomOoze::Application.middleware.delete 'Rack::ConditionalGet'
+DiatomOoze::Application.middleware.delete 'Rack::ETag'
